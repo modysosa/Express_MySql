@@ -1,21 +1,22 @@
 const db = require("../config/db");
 
-const createUser = async (name, email, password) => {
+const createUser = async (name, email, password, isAdmin = false) => {
   const [result] = await db.query(
-    "INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
-    [name, email, password],
+    "INSERT INTO users (name, email, password, admin) VALUES (?, ?, ?, ?)",
+    [name, email, password, isAdmin],
   );
 
   return {
     id: result.insertId,
     name,
     email,
+    admin: isAdmin,
   };
 };
 
 const getAllUsers = async () => {
   const [rows] = await db.query(
-    "SELECT id, name, email, created_at FROM users ORDER BY id DESC",
+    "SELECT id, name, email, admin, created_at FROM users ORDER BY id DESC",
   );
   return rows;
 };
@@ -27,10 +28,18 @@ const findUserByEmail = async (email) => {
 
 const findUserById = async (id) => {
   const [rows] = await db.query(
-    "SELECT id, name, email, created_at FROM users WHERE id = ?",
+    "SELECT id, name, email, admin, created_at FROM users WHERE id = ?",
     [id],
   );
   return rows[0];
+};
+
+const updateUserAdmin = async (id, isAdmin) => {
+  const [result] = await db.query("UPDATE users SET admin = ? WHERE id = ?", [
+    isAdmin,
+    id,
+  ]);
+  return result.affectedRows > 0;
 };
 
 module.exports = {
@@ -38,4 +47,5 @@ module.exports = {
   getAllUsers,
   findUserByEmail,
   findUserById,
+  updateUserAdmin,
 };
