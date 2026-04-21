@@ -16,6 +16,7 @@ const errorHandler = require("./middleware/errorHandler");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+const docsRoutes = require("./routes/docsRoutes");
 const viewRoutes = require("./routes/viewRoutes");
 
 const app = express();
@@ -92,6 +93,7 @@ app.use("/api/users", userRoutes);
  * PUT /api/admin/users/:userId/role
  */
 app.use("/api/admin", adminRoutes);
+app.use("/", docsRoutes);
 
 // ==================== View Routes ====================
 /**
@@ -142,6 +144,7 @@ const startServer = async () => {
       console.log(`   - Register: POST /api/auth/register`);
       console.log(`   - Login: POST /api/auth/login`);
       console.log(`   - Admin: GET /admin/dashboard`);
+      console.log(`   - Swagger UI: GET /api-docs`);
     });
   } catch (error) {
     console.error("❌ Database connection failed:", error.message);
