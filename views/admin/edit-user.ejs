@@ -1,0 +1,76 @@
+<%- include('../partials/header') %>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="mb-0">
+                            <i class="fas fa-user-edit"></i> Edit User
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <% if (typeof error !=='undefined' ) { %>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <%= error %>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                            </div>
+                            <% } %>
+
+                                <form method="POST" action="/admin/edit-user/<%= user.id %>">
+                                    <div class="mb-3">
+                                        <label class="form-label">User ID</label>
+                                        <input type="text" class="form-control" value="<%= user.id %>" disabled>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" id="name" name="name"
+                                            placeholder="Enter full name" value="<%= user.name %>" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="Enter email" value="<%= user.email %>" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">New Password (Leave blank to keep
+                                            current)</label>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            placeholder="Enter new password" minlength="6">
+                                        <small class="text-muted">Minimum 6 characters if changing</small>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Admin Status</label>
+                                        <div>
+                                            <% if (user.admin) { %>
+                                                <span class="badge bg-danger">Admin</span>
+                                                <% } else { %>
+                                                    <span class="badge bg-secondary">Regular User</span>
+                                                    <% } %>
+                                        </div>
+                                        <small class="text-muted">
+                                            Use the dashboard to change admin status
+                                        </small>
+                                    </div>
+
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="fas fa-save"></i> Update User
+                                        </button>
+                                        <a href="/admin/dashboard" class="btn btn-secondary">
+                                            <i class="fas fa-times"></i> Cancel
+                                        </a>
+                                    </div>
+                                </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>

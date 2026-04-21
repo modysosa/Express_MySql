@@ -42,10 +42,26 @@ const updateUserAdmin = async (id, isAdmin) => {
   return result.affectedRows > 0;
 };
 
+const updateUser = async (id, name, email) => {
+  const [result] = await db.query(
+    "UPDATE users SET name = ?, email = ? WHERE id = ?",
+    [name, email, id]
+  );
+  return result.affectedRows > 0;
+};
+
+const deleteUser = async (id) => {
+  const [result] = await db.query("DELETE FROM users WHERE id = ?", [id]);
+  return result.affectedRows > 0;
+};
+
 module.exports = {
   createUser,
   getAllUsers,
   findUserByEmail,
   findUserById,
   updateUserAdmin,
+  updateUser,
+  deleteUser,
 };
+
