@@ -1,4 +1,4 @@
-<%- include('../partials/header') %>
+<%- include('../partials/header', { title: 'Edit User' }) %>
 
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -10,7 +10,7 @@
                         </h3>
                     </div>
                     <div class="card-body">
-                        <% if (typeof error !=='undefined' ) { %>
+                        <% if (typeof error !=='undefined' && error) { %>
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                 <%= error %>
                                     <button type="button" class="btn-close" data-bs-dismiss="alert"

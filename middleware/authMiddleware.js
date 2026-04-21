@@ -1,5 +1,16 @@
-const jwt = require("jsonwebtoken");
+// Updated Authentication Middleware
+// Improved security and better error handling
 
+const authService = require("../services/authService");
+const AppError = require("../utils/appError");
+
+const isApiRequest = (req) =>
+  req.originalUrl.startsWith("/api/") || req.baseUrl.startsWith("/api");
+
+/**
+ * Protect route - verify JWT token
+ * Works with both Bearer tokens (API) and cookies (browser)
+ */
 const protect = (req, res, next) => {
   try {
     let token;
@@ -14,30 +25,24 @@ const protect = (req, res, next) => {
     }
 
     if (!token) {
-      // For view routes, redirect to login. For API routes, return JSON error
-      if (req.path.startsWith("/api")) {
-        return res.status(401).json({
-          success: false,
-          message: "No token provided",
-        });
+      // For API routes, return JSON. For view routes, redirect to login.
+      if (isApiRequest(req)) {
+        const error = new AppError("No token provided", 401);
+        return next(error);
       }
       return res.redirect("/login");
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
+    // Verify token using service
+    const decoded = authService.verifyToken(token);
     req.user = decoded;
-
     next();
   } catch (error) {
-    // For view routes, redirect to login. For API routes, return JSON error
-    if (req.path.startsWith("/api")) {
-      return res.status(401).json({
-        success: false,
-        message: "Invalid or expired token",
-      });
+    // For API routes, return error. For view routes, redirect to login.
+    if (isApiRequest(req)) {
+      return next(error);
     }
-    return res.redirect("/login");
+    res.redirect("/login");
   }
 };
 

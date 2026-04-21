@@ -1,77 +1,93 @@
 <%- include('../partials/header', { title: 'Register' }) %>
 
-  <h2><i class="fas fa-user-plus"></i> Register</h2>
+    <h2><i class="fas fa-user-plus"></i> Register</h2>
 
-  <div id="errorMessage" class="alert alert-danger" style="display: none;"></div>
-  <div id="successMessage" class="alert alert-success" style="display: none;"></div>
+    <div id="errorMessage" class="alert alert-danger" style="display: none;"></div>
+    <div id="successMessage" class="alert alert-success" style="display: none;"></div>
 
-  <form id="registerForm">
-    <div class="mb-3">
-      <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
-    </div>
+    <form id="registerForm">
+        <div class="mb-3">
+            <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
+        </div>
 
-    <div class="mb-3">
-      <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
-    </div>
+        <div class="mb-3">
+            <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+        </div>
 
-    <div class="mb-3">
-      <input type="password" id="password" name="password" class="form-control" placeholder="Password" minlength="6"
-        required>
-      <small class="text-muted">Minimum 6 characters</small>
-    </div>
+        <div class="mb-3">
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password"
+                minlength="6" required>
+            <small class="text-muted">Minimum 6 characters</small>
+        </div>
 
-    <button type="submit" class="btn btn-primary w-100">Register</button>
-  </form>
+        <button type="submit" class="btn btn-primary w-100">Register</button>
+    </form>
 
-  <p class="mt-3">Already have an account? <a href="/login">Login here</a></p>
+    <p class="mt-3">Already have an account? <a href="/login">Login here</a></p>
 
-  <script>
-    document.getElementById('registerForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      const errorDiv = document.getElementById('errorMessage');
-      const successDiv = document.getElementById('successMessage');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('errorMessage');
+            const successDiv = document.getElementById('successMessage');
 
-      // Hide previous messages
-      errorDiv.style.display = 'none';
-      successDiv.style.display = 'none';
+            // Hide previous messages
+            errorDiv.style.display = 'none';
+            errorDiv.textContent = '';
+            successDiv.style.display = 'none';
+            successDiv.textContent = '';
 
-      try {
-        const response = await fetch('/api/users/register', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ name, email, password })
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, password })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    errorDiv.textContent = data.message || 'Registration failed';
+                    errorDiv.style.display = 'block';
+                    return;
+                }
+
+                const token = data?.data?.token;
+                const user = data?.data?.user;
+
+                if (!user) {
+                    errorDiv.textContent = 'Invalid server response';
+                    errorDiv.style.display = 'block';
+                    return;
+                }
+
+                // اختياري فقط في development
+                if (token) {
+                    localStorage.setItem('authToken', token);
+                }
+
+                successDiv.textContent = 'Registration successful! Redirecting...';
+                successDiv.style.display = 'block';
+
+                setTimeout(() => {
+                    if (user.role === 'admin') {
+                        window.location.href = '/admin/dashboard';
+                    } else {
+                        window.location.href = '/user/dashboard';
+                    }
+                }, 1500);
+            } catch (error) {
+                errorDiv.textContent = 'An error occurred. Please try again.';
+                errorDiv.style.display = 'block';
+                console.error('Register error:', error);
+            }
         });
+    </script>
 
-        const data = await response.json();
-
-        if (!response.ok) {
-          errorDiv.textContent = data.message || 'Registration failed';
-          errorDiv.style.display = 'block';
-          return;
-        }
-
-        // Store token in localStorage
-        localStorage.setItem('authToken', data.token);
-
-        // Show success message and redirect
-        successDiv.textContent = 'Registration successful! Redirecting...';
-        successDiv.style.display = 'block';
-
-        setTimeout(() => {
-          window.location.href = '/user/dashboard';
-        }, 1500);
-      } catch (error) {
-        errorDiv.textContent = 'An error occurred. Please try again.';
-        errorDiv.style.display = 'block';
-        console.error('Register error:', error);
-      }
-    });
-  </script>
-
-  <%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>

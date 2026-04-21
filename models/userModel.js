@@ -50,6 +50,14 @@ const updateUser = async (id, name, email) => {
   return result.affectedRows > 0;
 };
 
+const updateUserPassword = async (id, password) => {
+  const [result] = await db.query(
+    "UPDATE users SET password = ? WHERE id = ?",
+    [password, id],
+  );
+  return result.affectedRows > 0;
+};
+
 const deleteUser = async (id) => {
   const [result] = await db.query("DELETE FROM users WHERE id = ?", [id]);
   return result.affectedRows > 0;
@@ -62,6 +70,7 @@ module.exports = {
   findUserById,
   updateUserAdmin,
   updateUser,
+  updateUserPassword,
   deleteUser,
 };
 
