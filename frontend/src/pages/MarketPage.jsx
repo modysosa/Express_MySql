@@ -1,6 +1,17 @@
 import { useEffect, useMemo, useState } from "react";
 
-const symbols = ["btcusdt", "ethusdt", "bnbusdt", "solusdt", "xrpusdt"];
+const symbols = [
+  "btcusdt",
+  "ethusdt",
+  "bnbusdt",
+  "solusdt",
+  "xrpusdt",
+  "adausdt",
+  "dogeusdt",
+  "maticusdt",
+  "ltcusdt",
+  "linkusdt",
+];
 
 const MarketPage = () => {
   const [prices, setPrices] = useState({});
@@ -43,17 +54,31 @@ const MarketPage = () => {
     return () => ws.close();
   }, [streamUrl]);
 
-  const rows = Object.values(prices);
+  const rows = symbols.map((s) => prices[s.toUpperCase()]).filter(Boolean);
 
   return (
     <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
       <div className="mb-4 flex items-center justify-between">
         <div>
-          <h2 className="text-xl font-bold text-slate-900">Live Binance Market</h2>
-          <p className="text-sm text-slate-500">Fast streaming prices from Binance WebSocket</p>
+          <h2 className="text-xl font-bold text-slate-900">
+            Live Binance Market
+          </h2>
+          <p className="text-sm text-slate-500">
+            Fast streaming prices from Binance WebSocket
+          </p>
         </div>
 
-        <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700">
+        <span
+          className={`rounded-lg px-4 py-1 text-sm font-semibold border ${
+            status === "Connected"
+              ? "bg-green-100 text-green-700 border-green-300"
+              : status === "Disconnected"
+                ? "bg-red-100 text-red-700 border-red-300"
+                : status === "Socket error"
+                  ? "bg-orange-100 text-orange-700 border-orange-300"
+                  : "bg-yellow-100 text-yellow-700 border-yellow-300"
+          }`}
+        >
           {status}
         </span>
       </div>
@@ -77,12 +102,16 @@ const MarketPage = () => {
           <tbody>
             {rows.map((row) => (
               <tr key={row.symbol} className="border-b hover:bg-slate-50">
-                <td className="px-4 py-3 font-bold text-slate-900">{row.symbol}</td>
+                <td className="px-4 py-3 font-bold text-slate-900">
+                  {row.symbol}
+                </td>
                 <td className="px-4 py-3">{row.lastPrice.toLocaleString()}</td>
                 <td className="px-4 py-3">{row.priceChange.toFixed(4)}</td>
                 <td
                   className={`px-4 py-3 font-semibold ${
-                    row.priceChangePercent >= 0 ? "text-green-600" : "text-red-600"
+                    row.priceChangePercent >= 0
+                      ? "text-green-600"
+                      : "text-red-600"
                   }`}
                 >
                   {row.priceChangePercent.toFixed(2)}%
@@ -99,7 +128,9 @@ const MarketPage = () => {
       </div>
 
       {rows.length === 0 && (
-        <p className="mt-4 text-sm text-slate-500">Waiting for market data...</p>
+        <p className="mt-4 text-sm text-slate-500">
+          Waiting for market data...
+        </p>
       )}
     </div>
   );
