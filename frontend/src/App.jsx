@@ -6,6 +6,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import DashboardPage from "./pages/DashboardPage";
 import AdminUsersPage from "./pages/AdminUsersPage";
+import MarketPage from "./pages/MarketPage";
 
 const navItemClass =
   "rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-500 hover:text-brand-600";
@@ -35,6 +36,9 @@ const App = () => {
           <nav className="flex flex-wrap items-center gap-2">
             <Link to="/dashboard" className={navItemClass}>
               Dashboard
+            </Link>
+            <Link to="/market" className={navItemClass}>
+              Market
             </Link>
             {isAdmin && (
               <Link to="/admin/users" className={navItemClass}>
@@ -75,6 +79,7 @@ const App = () => {
 
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/market" element={<MarketPage />} />
           </Route>
 
           <Route element={<AdminRoute />}>

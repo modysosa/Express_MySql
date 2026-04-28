@@ -1,0 +1,7 @@
+Run both apps
+Backend:
+npm run dev:backend
+Frontend:
+npm run dev:frontend
+
+
