@@ -8,9 +8,6 @@ const errorHandler = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.message = err.message || AUTH.MESSAGES.SERVER.ERROR;
 
-  // Handle specific error types
-  // (Add more as needed for your use case)
-
   // Wrong JWT error
   if (err.name === "JsonWebTokenError") {
     err.statusCode = 401;
@@ -29,13 +26,26 @@ const errorHandler = (err, req, res, next) => {
     err.message = AUTH.MESSAGES.VALIDATION.USER_EXISTS;
   }
 
-  // Log error in development
+  // Log errors in development.
+  // Avoid stack spam for expected unauthenticated requests from frontend bootstrap.
   if (process.env.NODE_ENV !== "production") {
-    console.error("❌ Error:", {
-      message: err.message,
-      statusCode: err.statusCode,
-      stack: err.stack,
-    });
+    const isExpectedUnauthorized =
+      err.statusCode === 401 && err.message === "No token provided";
+
+    if (isExpectedUnauthorized) {
+      console.warn("[AUTH]", {
+        message: err.message,
+        statusCode: err.statusCode,
+        method: req.method,
+        path: req.originalUrl,
+      });
+    } else {
+      console.error("[ERROR]", {
+        message: err.message,
+        statusCode: err.statusCode,
+        stack: err.stack,
+      });
+    }
   }
 
   const exposeStack =

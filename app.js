@@ -1,13 +1,12 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const path = require("path");
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 // Config & Constants
 dotenv.config();
 const authConfig = require("./config/authConfig");
 const db = require("./config/db");
-const authService = require("./services/authService");
 
 // Middleware
 const errorHandler = require("./middleware/errorHandler");
@@ -17,42 +16,19 @@ const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const docsRoutes = require("./routes/docsRoutes");
-const viewRoutes = require("./routes/viewRoutes");
 
 const app = express();
 
-// ==================== View Engine Setup ====================
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
-
 // ==================== Body Parser & Cookie Middleware ====================
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
-// Shared view locals for navbar and basic flash messages
-app.use((req, res, next) => {
-  const success =
-    typeof req.query.success === "string" ? req.query.success : null;
-  const error = typeof req.query.error === "string" ? req.query.error : null;
-
-  res.locals.flash = { success, error };
-  res.locals.currentUser = null;
-
-  const token = req.cookies ? req.cookies.authToken : null;
-  if (!token) {
-    return next();
-  }
-
-  try {
-    res.locals.currentUser = authService.verifyToken(token);
-  } catch (err) {
-    const cookieConfig = authService.getCookieConfig();
-    res.clearCookie(cookieConfig.name);
-  }
-
-  return next();
-});
 
 // ==================== Custom Error Handler for JSON Parsing ====================
 app.use((err, req, res, next) => {
@@ -94,28 +70,9 @@ app.use("/api/users", userRoutes);
  */
 app.use("/api/admin", adminRoutes);
 app.use("/", docsRoutes);
-
-// ==================== View Routes ====================
-/**
- * Authentication views (public)
- * GET /register
- * GET /login
- * GET /logout
- *
- * User views (protected)
- * GET /profile
- * GET /user/dashboard
- * GET /users
- *
- * Admin views (protected + admin only)
- * GET /admin/dashboard
- * GET /admin/create-user
- * POST /admin/create-user
- * GET /admin/edit-user/:userId
- * POST /admin/edit-user/:userId
- * POST /admin/delete-user/:userId
- */
-app.use("/", viewRoutes);
+app.get("/api/health", (req, res) => {
+  res.status(200).json({ success: true, message: "Backend is running" });
+});
 
 // ==================== Centralized Error Handler ====================
 // MUST be last middleware - catches all errors from routes
@@ -139,11 +96,11 @@ const startServer = async () => {
     connection.release();
 
     app.listen(PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}/login`);
+      console.log(`🚀 Server running on http://localhost:${PORT}`);
       console.log(`📝 Docs:`);
       console.log(`   - Register: POST /api/auth/register`);
       console.log(`   - Login: POST /api/auth/login`);
-      console.log(`   - Admin: GET /admin/dashboard`);
+      console.log(`   - Profile: GET /api/users/profile`);
       console.log(`   - Swagger UI: GET /api-docs`);
     });
   } catch (error) {

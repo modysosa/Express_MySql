@@ -1,0 +1,481 @@
+2026-04-28T07:17:57.393Z vite:config bundled config file loaded in 82.15ms
+2026-04-28T07:17:57.413Z vite:config using resolved config: {
+  plugins: [
+    'vite:optimized-deps',
+    'vite:watch-package-data',
+    'vite:pre-alias',
+    'alias',
+    'vite:react-babel',
+    'vite:react-refresh',
+    'vite:modulepreload-polyfill',
+    'vite:resolve',
+    'vite:html-inline-proxy',
+    'vite:css',
+    'vite:esbuild',
+    'vite:json',
+    'vite:wasm-helper',
+    'vite:worker',
+    'vite:asset',
+    'vite:wasm-fallback',
+    'vite:define',
+    'vite:css-post',
+    'vite:worker-import-meta-url',
+    'vite:asset-import-meta-url',
+    'vite:dynamic-import-vars',
+    'vite:import-glob',
+    'vite:client-inject',
+    'vite:css-analysis',
+    'vite:import-analysis'
+  ],
+  server: {
+    preTransformRequests: true,
+    port: 5173,
+    sourcemapIgnoreList: [Function: isInNodeModules$1],
+    middlewareMode: false,
+    fs: {
+      strict: true,
+      allow: [Array],
+      deny: [Array],
+      cachedChecks: undefined
+    }
+  },
+  optimizeDeps: {
+    holdUntilCrawlEnd: true,
+    force: undefined,
+    esbuildOptions: { preserveSymlinks: false, jsx: 'automatic' },
+    include: [
+      'react',
+      'react-dom',
+      'react/jsx-dev-runtime',
+      'react/jsx-runtime'
+    ]
+  },
+  esbuild: { jsxDev: true, jsx: 'automatic', jsxImportSource: undefined },
+  build: {
+    target: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+    cssTarget: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+    outDir: 'dist',
+    assetsDir: 'assets',
+    assetsInlineLimit: 4096,
+    cssCodeSplit: true,
+    sourcemap: false,
+    rollupOptions: { onwarn: [Function: onwarn] },
+    minify: 'esbuild',
+    terserOptions: {},
+    write: true,
+    emptyOutDir: null,
+    copyPublicDir: true,
+    manifest: false,
+    lib: false,
+    ssr: false,
+    ssrManifest: false,
+    ssrEmitAssets: false,
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 500,
+    watch: null,
+    commonjsOptions: { include: [Array], extensions: [Array] },
+    dynamicImportVarsOptions: { warnOnError: true, exclude: [Array] },
+    modulePreload: { polyfill: true },
+    cssMinify: true
+  },
+  resolve: {
+    mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+    conditions: [],
+    extensions: [
+      '.mjs',  '.js',
+      '.mts',  '.ts',
+      '.jsx',  '.tsx',
+      '.json'
+    ],
+    dedupe: [ 'react', 'react-dom' ],
+    preserveSymlinks: false,
+    alias: [ [Object], [Object] ]
+  },
+  configFile: 'C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/vite.config.js',
+  configFileDependencies: [
+    'C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/vite.config.js'
+  ],
+  inlineConfig: {
+    root: undefined,
+    base: undefined,
+    mode: undefined,
+    configFile: undefined,
+    logLevel: undefined,
+    clearScreen: undefined,
+    optimizeDeps: { force: undefined },
+    server: { host: undefined }
+  },
+  root: 'C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend',
+  base: '/',
+  decodedBase: '/',
+  rawBase: '/',
+  publicDir: 'C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/public',
+  cacheDir: 'C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/.vite',
+  command: 'serve',
+  mode: 'development',
+  ssr: {
+    target: 'node',
+    optimizeDeps: { noDiscovery: true, esbuildOptions: [Object] }
+  },
+  isWorker: false,
+  mainConfig: null,
+  bundleChain: [],
+  isProduction: false,
+  css: { lightningcss: undefined },
+  preview: {
+    port: undefined,
+    strictPort: undefined,
+    host: undefined,
+    allowedHosts: undefined,
+    https: undefined,
+    open: undefined,
+    proxy: undefined,
+    cors: undefined,
+    headers: undefined
+  },
+  envDir: 'C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend',
+  env: { BASE_URL: '/', MODE: 'development', DEV: true, PROD: false },
+  assetsInclude: [Function: assetsInclude],
+  logger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: hasErrorLogged]
+  },
+  packageCache: Map(1) {
+    'fnpd_C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend' => {
+      dir: 'C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend',
+      data: [Object],
+      hasSideEffects: [Function: hasSideEffects],
+      webResolvedImports: {},
+      nodeResolvedImports: {},
+      setResolvedCache: [Function: setResolvedCache],
+      getResolvedCache: [Function: getResolvedCache]
+    },
+    set: [Function (anonymous)]
+  },
+  createResolver: [Function: createResolver],
+  worker: { format: 'iife', plugins: '() => plugins', rollupOptions: {} },
+  appType: 'spa',
+  experimental: { importGlobRestoreExtension: false, hmrPartialAccept: false },
+  webSocketToken: '2vZkh5Z0-9NM',
+  additionalAllowedHosts: [],
+  getSortedPlugins: [Function: getSortedPlugins],
+  getSortedPluginHooks: [Function: getSortedPluginHooks]
+}
+2026-04-28T07:17:57.450Z vite:deps [32mremoving old cache dir C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/.vite/deps[39m
+2026-04-28T07:17:57.468Z vite:resolve [32m7.71ms[39m [36mreact[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/index.js[22m
+2026-04-28T07:17:57.473Z vite:resolve [32m3.90ms[39m [36mreact-dom[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-dom/index.js[22m
+2026-04-28T07:17:57.476Z vite:resolve [32m2.96ms[39m [36mreact/jsx-dev-runtime[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/jsx-dev-runtime.js[22m
+2026-04-28T07:17:57.480Z vite:resolve [32m2.93ms[39m [36mreact/jsx-runtime[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/jsx-runtime.js[22m
+2026-04-28T07:17:57.484Z vite:deps [32mscanning for dependencies...[39m
+2026-04-28T07:17:57.520Z vite:deps Crawling dependencies using entries: 
+  [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/index.html[22m
+2026-04-28T07:17:58.426Z vite:resolve [32m0.86ms[39m [36m/src/main.jsx[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/main.jsx[22m
+2026-04-28T07:17:58.434Z vite:resolve [32m2.74ms[39m [36mreact[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/index.js[22m
+2026-04-28T07:17:58.444Z vite:resolve [32m1.83ms[39m [36mreact-dom/client[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-dom/client.js[22m
+2026-04-28T07:17:58.454Z vite:resolve [32m1.63ms[39m [36mreact-router-dom[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-router-dom/dist/index.js[22m
+2026-04-28T07:17:58.460Z vite:resolve [32m0.68ms[39m [36m./App[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/App.jsx[22m
+2026-04-28T07:17:58.462Z vite:resolve [32m0.79ms[39m [36m./context/AuthContext[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/context/AuthContext.jsx[22m
+2026-04-28T07:17:58.465Z vite:resolve [32m0.96ms[39m [36mreact/jsx-runtime[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/jsx-runtime.js[22m
+2026-04-28T07:17:58.468Z vite:resolve [32m1.03ms[39m [36m../api[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/api.js[22m
+2026-04-28T07:17:58.470Z vite:resolve [32m1.15ms[39m [36m./components/ProtectedRoute[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/components/ProtectedRoute.jsx[22m
+2026-04-28T07:17:58.472Z vite:resolve [32m0.84ms[39m [36m./components/AdminRoute[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/components/AdminRoute.jsx[22m
+2026-04-28T07:17:58.474Z vite:resolve [32m1.33ms[39m [36m./pages/LoginPage[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/pages/LoginPage.jsx[22m
+2026-04-28T07:17:58.476Z vite:resolve [32m0.74ms[39m [36m./pages/RegisterPage[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/pages/RegisterPage.jsx[22m
+2026-04-28T07:17:58.477Z vite:resolve [32m0.92ms[39m [36m./pages/DashboardPage[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/pages/DashboardPage.jsx[22m
+2026-04-28T07:17:58.479Z vite:resolve [32m0.76ms[39m [36m./pages/AdminUsersPage[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/pages/AdminUsersPage.jsx[22m
+2026-04-28T07:17:58.495Z vite:resolve [32m1.94ms[39m [36m../context/AuthContext[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/context/AuthContext.jsx[22m
+2026-04-28T07:17:58.497Z vite:resolve [32m1.07ms[39m [36m../hooks/useAdminUsers[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/hooks/useAdminUsers.js[22m
+2026-04-28T07:17:58.516Z vite:deps Scan completed in 1031.52ms: 
+  [36mreact[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/index.js[22m
+  [36mreact-dom/client[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-dom/client.js[22m
+  [36mreact-router-dom[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-router-dom/dist/index.js[22m
+  [36mreact/jsx-runtime[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/jsx-runtime.js[22m
+2026-04-28T07:17:58.518Z vite:deps [32mcreating package.json in C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/.vite/deps_temp_8e93e1d3[39m
+2026-04-28T07:17:58.545Z vite:resolve [32m2.42ms[39m [36mreact-dom[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-dom/index.js[22m
+2026-04-28T07:17:58.549Z vite:resolve [32m2.54ms[39m [36mreact[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/index.js[22m
+2026-04-28T07:17:58.554Z vite:resolve [32m2.13ms[39m [36mreact-dom[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-dom/index.js[22m
+2026-04-28T07:17:58.557Z vite:resolve [32m1.85ms[39m [36mreact[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/index.js[22m
+2026-04-28T07:17:58.559Z vite:resolve [32m1.80ms[39m [36mreact-router[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-router/dist/index.js[22m
+2026-04-28T07:17:58.562Z vite:resolve [32m1.71ms[39m [36m@remix-run/router[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/@remix-run/router/dist/router.js[22m
+2026-04-28T07:17:58.611Z vite:resolve [32m1.16ms[39m [36mscheduler[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/scheduler/index.js[22m
+2026-04-28T07:17:58.685Z vite:deps Dependencies bundled in 164.64ms
+2026-04-28T07:18:02.560Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:02.563Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:17.033Z vite:hmr [file change] [2mpostcss.config.cjs[22m
+2026-04-28T07:18:17.034Z vite:hmr [no modules matched] [2mpostcss.config.cjs[22m
+2026-04-28T07:18:17.045Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:17.046Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:24.683Z vite:hmr [file change] [2mvite.config.js.timestamp-1777360704649-bd07c03addf468.mjs[22m
+2026-04-28T07:18:24.686Z vite:hmr [no modules matched] [2mvite.config.js.timestamp-1777360704649-bd07c03addf468.mjs[22m
+2026-04-28T07:18:24.697Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:24.698Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:24.813Z vite:hmr [file change] [2mvite.config.js.timestamp-1777360704649-bd07c03addf468.mjs[22m
+2026-04-28T07:18:24.814Z vite:hmr [no modules matched] [2mvite.config.js.timestamp-1777360704649-bd07c03addf468.mjs[22m
+2026-04-28T07:18:24.839Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:24.844Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:48.527Z vite:hmr [config change] [2mvite.config.js[22m
+2026-04-28T07:18:48.575Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:48.578Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:48.579Z vite:hmr [file change] [2mvite-debug.out.log[22m
+2026-04-28T07:18:48.580Z vite:hmr [no modules matched] [2mvite-debug.out.log[22m
+2026-04-28T07:18:48.724Z vite:hmr [file change] [2mvite.config.js.timestamp-1777360728703-819e82d03e01b.mjs[22m
+2026-04-28T07:18:48.725Z vite:hmr [no modules matched] [2mvite.config.js.timestamp-1777360728703-819e82d03e01b.mjs[22m
+2026-04-28T07:18:48.734Z vite:config bundled config file loaded in 184.16ms
+2026-04-28T07:18:48.742Z vite:config using resolved config: {
+  plugins: [
+    'vite:optimized-deps',
+    'vite:watch-package-data',
+    'vite:pre-alias',
+    'alias',
+    'vite:react-babel',
+    'vite:react-refresh',
+    'vite:modulepreload-polyfill',
+    'vite:resolve',
+    'vite:html-inline-proxy',
+    'vite:css',
+    'vite:esbuild',
+    'vite:json',
+    'vite:wasm-helper',
+    'vite:worker',
+    'vite:asset',
+    'vite:wasm-fallback',
+    'vite:define',
+    'vite:css-post',
+    'vite:worker-import-meta-url',
+    'vite:asset-import-meta-url',
+    'vite:dynamic-import-vars',
+    'vite:import-glob',
+    'vite:client-inject',
+    'vite:css-analysis',
+    'vite:import-analysis'
+  ],
+  css: {
+    postcss: 'C:\\Users\\mohamed.a\\OneDrive - HK TECHNOLOGY\\Documents\\Codes\\Express_MySql\\frontend\\postcss.config.cjs',
+    lightningcss: undefined
+  },
+  server: {
+    preTransformRequests: true,
+    port: 5173,
+    sourcemapIgnoreList: [Function: isInNodeModules$1],
+    middlewareMode: false,
+    fs: {
+      strict: true,
+      allow: [Array],
+      deny: [Array],
+      cachedChecks: undefined
+    }
+  },
+  optimizeDeps: {
+    holdUntilCrawlEnd: true,
+    force: undefined,
+    esbuildOptions: { preserveSymlinks: false, jsx: 'automatic' },
+    include: [
+      'react',
+      'react-dom',
+      'react/jsx-dev-runtime',
+      'react/jsx-runtime'
+    ]
+  },
+  esbuild: { jsxDev: true, jsx: 'automatic', jsxImportSource: undefined },
+  build: {
+    target: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+    cssTarget: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+    outDir: 'dist',
+    assetsDir: 'assets',
+    assetsInlineLimit: 4096,
+    cssCodeSplit: true,
+    sourcemap: false,
+    rollupOptions: { onwarn: [Function: onwarn] },
+    minify: 'esbuild',
+    terserOptions: {},
+    write: true,
+    emptyOutDir: null,
+    copyPublicDir: true,
+    manifest: false,
+    lib: false,
+    ssr: false,
+    ssrManifest: false,
+    ssrEmitAssets: false,
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 500,
+    watch: null,
+    commonjsOptions: { include: [Array], extensions: [Array] },
+    dynamicImportVarsOptions: { warnOnError: true, exclude: [Array] },
+    modulePreload: { polyfill: true },
+    cssMinify: true
+  },
+  resolve: {
+    mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+    conditions: [],
+    extensions: [
+      '.mjs',  '.js',
+      '.mts',  '.ts',
+      '.jsx',  '.tsx',
+      '.json'
+    ],
+    dedupe: [ 'react', 'react-dom' ],
+    preserveSymlinks: false,
+    alias: [ [Object], [Object] ]
+  },
+  configFile: 'C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/vite.config.js',
+  configFileDependencies: [
+    'C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/vite.config.js'
+  ],
+  inlineConfig: {
+    root: undefined,
+    base: undefined,
+    mode: undefined,
+    configFile: undefined,
+    logLevel: undefined,
+    clearScreen: undefined,
+    optimizeDeps: { force: undefined },
+    server: { host: undefined }
+  },
+  root: 'C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend',
+  base: '/',
+  decodedBase: '/',
+  rawBase: '/',
+  publicDir: 'C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/public',
+  cacheDir: 'C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/.vite',
+  command: 'serve',
+  mode: 'development',
+  ssr: {
+    target: 'node',
+    optimizeDeps: { noDiscovery: true, esbuildOptions: [Object] }
+  },
+  isWorker: false,
+  mainConfig: null,
+  bundleChain: [],
+  isProduction: false,
+  preview: {
+    port: undefined,
+    strictPort: undefined,
+    host: undefined,
+    allowedHosts: undefined,
+    https: undefined,
+    open: undefined,
+    proxy: undefined,
+    cors: undefined,
+    headers: undefined
+  },
+  envDir: 'C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend',
+  env: { BASE_URL: '/', MODE: 'development', DEV: true, PROD: false },
+  assetsInclude: [Function: assetsInclude],
+  logger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: hasErrorLogged]
+  },
+  packageCache: Map(1) {
+    'fnpd_C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend' => {
+      dir: 'C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend',
+      data: [Object],
+      hasSideEffects: [Function: hasSideEffects],
+      webResolvedImports: {},
+      nodeResolvedImports: {},
+      setResolvedCache: [Function: setResolvedCache],
+      getResolvedCache: [Function: getResolvedCache]
+    },
+    set: [Function (anonymous)]
+  },
+  createResolver: [Function: createResolver],
+  worker: { format: 'iife', plugins: '() => plugins', rollupOptions: {} },
+  appType: 'spa',
+  experimental: { importGlobRestoreExtension: false, hmrPartialAccept: false },
+  webSocketToken: 'DvlS_F-p0v9P',
+  additionalAllowedHosts: [],
+  getSortedPlugins: [Function: getSortedPlugins],
+  getSortedPluginHooks: [Function: getSortedPluginHooks]
+}
+2026-04-28T07:18:48.745Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:48.746Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:48.757Z vite:deps [32mremoving cache dir C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/.vite/deps_temp_8e93e1d3[39m
+2026-04-28T07:18:48.770Z vite:deps [32mremoving old cache dir C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/.vite/deps[39m
+2026-04-28T07:18:48.778Z vite:resolve [32m3.48ms[39m [36mreact[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/index.js[22m
+2026-04-28T07:18:48.781Z vite:resolve [32m2.42ms[39m [36mreact-dom[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-dom/index.js[22m
+2026-04-28T07:18:48.783Z vite:resolve [32m1.37ms[39m [36mreact/jsx-dev-runtime[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/jsx-dev-runtime.js[22m
+2026-04-28T07:18:48.786Z vite:resolve [32m2.97ms[39m [36mreact/jsx-runtime[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/jsx-runtime.js[22m
+2026-04-28T07:18:48.788Z vite:deps [32mscanning for dependencies...[39m
+2026-04-28T07:18:48.824Z vite:deps Crawling dependencies using entries: 
+  [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/index.html[22m
+2026-04-28T07:18:48.832Z vite:hmr [file change] [2mvite-debug.out.log[22m
+2026-04-28T07:18:48.833Z vite:hmr [no modules matched] [2mvite-debug.out.log[22m
+2026-04-28T07:18:48.834Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:48.835Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.047Z vite:resolve [32m1.29ms[39m [36m/src/main.jsx[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/main.jsx[22m
+2026-04-28T07:18:49.063Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.064Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.100Z vite:resolve [32m3.03ms[39m [36mreact[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/index.js[22m
+2026-04-28T07:18:49.120Z vite:resolve [32m2.64ms[39m [36mreact-dom/client[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-dom/client.js[22m
+2026-04-28T07:18:49.126Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.127Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.154Z vite:resolve [32m2.37ms[39m [36mreact-router-dom[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-router-dom/dist/index.js[22m
+2026-04-28T07:18:49.181Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.184Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.190Z vite:resolve [32m1.17ms[39m [36m./App[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/App.jsx[22m
+2026-04-28T07:18:49.203Z vite:resolve [32m1.21ms[39m [36m./context/AuthContext[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/context/AuthContext.jsx[22m
+2026-04-28T07:18:49.225Z vite:resolve [32m0.80ms[39m [36mreact/jsx-runtime[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/jsx-runtime.js[22m
+2026-04-28T07:18:49.264Z vite:resolve [32m1.42ms[39m [36m../api[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/api.js[22m
+2026-04-28T07:18:49.282Z vite:resolve [32m1.84ms[39m [36m./components/ProtectedRoute[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/components/ProtectedRoute.jsx[22m
+2026-04-28T07:18:49.293Z vite:resolve [32m1.32ms[39m [36m./components/AdminRoute[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/components/AdminRoute.jsx[22m
+2026-04-28T07:18:49.298Z vite:resolve [32m1.29ms[39m [36m./pages/LoginPage[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/pages/LoginPage.jsx[22m
+2026-04-28T07:18:49.307Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.307Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.328Z vite:resolve [32m1.88ms[39m [36m./pages/RegisterPage[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/pages/RegisterPage.jsx[22m
+2026-04-28T07:18:49.347Z vite:resolve [32m1.40ms[39m [36m./pages/DashboardPage[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/pages/DashboardPage.jsx[22m
+2026-04-28T07:18:49.362Z vite:resolve [32m1.72ms[39m [36m./pages/AdminUsersPage[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/pages/AdminUsersPage.jsx[22m
+2026-04-28T07:18:49.366Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.368Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.402Z vite:resolve [32m1.69ms[39m [36m../context/AuthContext[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/context/AuthContext.jsx[22m
+2026-04-28T07:18:49.461Z vite:resolve [32m1.37ms[39m [36m../hooks/useAdminUsers[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/src/hooks/useAdminUsers.js[22m
+2026-04-28T07:18:49.474Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.475Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.530Z vite:deps Scan completed in 741.08ms: 
+  [36mreact[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/index.js[22m
+  [36mreact-dom/client[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-dom/client.js[22m
+  [36mreact-router-dom[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-router-dom/dist/index.js[22m
+  [36mreact/jsx-runtime[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/jsx-runtime.js[22m
+2026-04-28T07:18:49.532Z vite:deps [32mcreating package.json in C:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/.vite/deps_temp_f27fb0bc[39m
+2026-04-28T07:18:49.543Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.544Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.575Z vite:resolve [32m2.64ms[39m [36mreact-dom[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-dom/index.js[22m
+2026-04-28T07:18:49.580Z vite:resolve [32m2.30ms[39m [36mreact[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/index.js[22m
+2026-04-28T07:18:49.589Z vite:resolve [32m1.94ms[39m [36mreact[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react/index.js[22m
+2026-04-28T07:18:49.595Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.596Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:49.601Z vite:resolve [32m1.93ms[39m [36mreact-dom[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-dom/index.js[22m
+2026-04-28T07:18:49.610Z vite:resolve [32m2.05ms[39m [36mreact-router[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/react-router/dist/index.js[22m
+2026-04-28T07:18:49.617Z vite:resolve [32m1.91ms[39m [36m@remix-run/router[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/@remix-run/router/dist/router.js[22m
+2026-04-28T07:18:49.827Z vite:resolve [32m2.01ms[39m [36mscheduler[39m -> [2mC:/Users/mohamed.a/OneDrive - HK TECHNOLOGY/Documents/Codes/Express_MySql/frontend/node_modules/scheduler/index.js[22m
+2026-04-28T07:18:50.289Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:50.290Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:50.617Z vite:deps Dependencies bundled in 1078.57ms
+2026-04-28T07:18:57.974Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:18:57.976Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:18:57.978Z vite:hmr [file change] [2mvite.config.js.timestamp-1777360737955-e765c8b5f90248.mjs[22m
+2026-04-28T07:18:57.979Z vite:hmr [no modules matched] [2mvite.config.js.timestamp-1777360737955-e765c8b5f90248.mjs[22m
+2026-04-28T07:18:58.095Z vite:hmr [file change] [2mvite.config.js.timestamp-1777360737955-e765c8b5f90248.mjs[22m
+2026-04-28T07:18:58.096Z vite:hmr [no modules matched] [2mvite.config.js.timestamp-1777360737955-e765c8b5f90248.mjs[22m
+2026-04-28T07:19:11.473Z vite:hmr [file change] [2mvite.config.js.timestamp-1777360751454-db45b256ead05.mjs[22m
+2026-04-28T07:19:11.474Z vite:hmr [no modules matched] [2mvite.config.js.timestamp-1777360751454-db45b256ead05.mjs[22m
+2026-04-28T07:19:11.476Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:19:11.477Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:19:11.600Z vite:hmr [file change] [2mvite.config.js.timestamp-1777360751454-db45b256ead05.mjs[22m
+2026-04-28T07:19:11.601Z vite:hmr [no modules matched] [2mvite.config.js.timestamp-1777360751454-db45b256ead05.mjs[22m
+2026-04-28T07:19:24.153Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:19:24.157Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T07:22:38.301Z vite:hmr [file change] [2msrc/hooks/useAdminUsers.js[22m
+2026-04-28T07:22:38.302Z vite:hmr [no modules matched] [2msrc/hooks/useAdminUsers.js[22m
+2026-04-28T07:22:49.453Z vite:hmr [file change] [2msrc/pages/AdminUsersPage.jsx[22m
+2026-04-28T07:22:49.454Z vite:hmr [no modules matched] [2msrc/pages/AdminUsersPage.jsx[22m
+2026-04-28T07:22:53.647Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T07:22:53.649Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m

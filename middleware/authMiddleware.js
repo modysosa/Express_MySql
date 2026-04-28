@@ -4,12 +4,9 @@
 const authService = require("../services/authService");
 const AppError = require("../utils/appError");
 
-const isApiRequest = (req) =>
-  req.originalUrl.startsWith("/api/") || req.baseUrl.startsWith("/api");
-
 /**
  * Protect route - verify JWT token
- * Works with both Bearer tokens (API) and cookies (browser)
+ * Works with both Bearer tokens and cookies
  */
 const protect = (req, res, next) => {
   try {
@@ -25,12 +22,7 @@ const protect = (req, res, next) => {
     }
 
     if (!token) {
-      // For API routes, return JSON. For view routes, redirect to login.
-      if (isApiRequest(req)) {
-        const error = new AppError("No token provided", 401);
-        return next(error);
-      }
-      return res.redirect("/login");
+      return next(new AppError("No token provided", 401));
     }
 
     // Verify token using service
@@ -38,11 +30,7 @@ const protect = (req, res, next) => {
     req.user = decoded;
     next();
   } catch (error) {
-    // For API routes, return error. For view routes, redirect to login.
-    if (isApiRequest(req)) {
-      return next(error);
-    }
-    res.redirect("/login");
+    return next(error);
   }
 };
 
