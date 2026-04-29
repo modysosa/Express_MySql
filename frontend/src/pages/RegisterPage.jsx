@@ -112,7 +112,7 @@ const LoginPage = () => {
             >
               <div>
                 <h3 className="mb-6 text-2xl font-bold">
-                  Mohamed Sousa - Full Stack Developer
+                  Mohamed Sousa App - Auth with Market Prices
                 </h3>
                 <p className="text-sm leading-6">
                   Sign in to manage your dashboard, users, and application data

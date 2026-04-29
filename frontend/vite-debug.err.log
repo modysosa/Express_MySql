@@ -727,3 +727,51 @@
 2026-04-28T13:04:07.509Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
 2026-04-28T13:04:38.958Z vite:hmr [file change] [2mvite-debug.err.log[22m
 2026-04-28T13:04:38.961Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T13:07:13.659Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:13.660Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:16.007Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:16.008Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:18.117Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:18.119Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:21.732Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:21.733Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:23.334Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:23.335Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:25.909Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T13:07:25.910Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T13:07:28.515Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:28.516Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:30.387Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:30.388Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:35.941Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:35.942Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:39.564Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:39.565Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:41.978Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:41.980Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:47.590Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:47.591Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:53.374Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:53.376Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:55.155Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:55.157Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:56.524Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:07:56.525Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:08:02.090Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:08:02.092Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:08:05.005Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:08:05.007Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:08:06.133Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:08:06.134Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:08:08.430Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:08:08.430Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:08:09.766Z vite:hmr [file change] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:08:09.775Z vite:hmr [no modules matched] [2msrc/pages/RegisterPage.jsx[22m
+2026-04-28T13:08:48.243Z vite:hmr [file change] [2msrc/pages/LoginPage.jsx[22m
+2026-04-28T13:08:48.244Z vite:hmr [no modules matched] [2msrc/pages/LoginPage.jsx[22m
+2026-04-28T13:08:51.132Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T13:08:51.133Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
+2026-04-28T13:09:22.604Z vite:hmr [file change] [2msrc/pages/LoginPage.jsx[22m
+2026-04-28T13:09:22.604Z vite:hmr [no modules matched] [2msrc/pages/LoginPage.jsx[22m
+2026-04-28T13:10:15.276Z vite:hmr [file change] [2mvite-debug.err.log[22m
+2026-04-28T13:10:15.279Z vite:hmr [no modules matched] [2mvite-debug.err.log[22m
