@@ -8,3 +8,9 @@ npm run dev:frontend
 Swagger API
 http://localhost:5000/api-docs
 
+
+
+General info: https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-api-general-info
+Symbol Price Ticker (ticker.price): https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/websocket-api/Symbol-Price-Ticker
+Symbol Order Book Ticker (ticker.book): https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/websocket-api/Symbol-Order-Book-Ticker
+Order Book (depth): https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/websocket-api
